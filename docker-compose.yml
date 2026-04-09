@@ -4,11 +4,10 @@ services:
     build: /app
     ports:
       - "8181:3000" # [exposed port]:[default service port]
-    env_file:
-      - .env
+    environment:
+      - DB_NAME=training
+      - DB_HOST=172.23.11.26
+      - DB_USER=peserta
+      - DB_PASS=password
+      - APP_PORT=3000
     restart: always
-    volumes:
-      - vol-simple:/app/public/images/
-
-volumes:
-  vol-simple:

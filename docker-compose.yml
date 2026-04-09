@@ -1,0 +1,14 @@
+services:
+  simpleapps:
+    container_name: ct-simpleapps
+    build: /app
+    ports:
+      - "8181:3000" # [exposed port]:[default service port]
+    env_file:
+      - .env
+    restart: always
+    volumes:
+      - vol-simple:/app/public/images/
+
+volumes:
+  vol-simple:

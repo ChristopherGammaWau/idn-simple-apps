@@ -1,7 +1,7 @@
 services:
   simpleapps:
     container_name: ct-simpleapps
-    build: /app
+    image: christophergamma/simpleapps
     ports:
       - "8181:3000" # [exposed port]:[default service port]
     environment:
